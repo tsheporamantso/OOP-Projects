@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable func-names */
 const getElement = function (selection) {
   const element = document.querySelector(selection);
