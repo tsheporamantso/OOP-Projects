@@ -21,8 +21,11 @@ function Gallery(element) {
 
   // Bind functions
   // this.openModal = this.openModal.bind(this);
+  this.closeModal = this.closeModal.bind(this);
+  this.nextImage = this.nextImage.bind(this);
+  this.prevImage = this.prevImage.bind(this);
 
-  // content
+  // container event
   this.container.addEventListener(
     'click',
     function (e) {
@@ -43,11 +46,38 @@ Gallery.prototype.openModal = function (selectedImage, list) {
     })
     .join('');
   this.modal.classList.add('open');
+  this.closeBtn.addEventListener('click', this.closeModal);
+  this.nextBtn.addEventListener('click', this.nextImage);
+  this.prevBtn.addEventListener('click', this.prevImage);
 };
 
 Gallery.prototype.setMainImage = function (selectedImage) {
   this.modalImg.src = selectedImage.src;
   this.imageName.textContent = selectedImage.title;
+};
+
+Gallery.prototype.closeModal = function () {
+  this.modal.classList.remove('open');
+  this.closeBtn.removeEventListener('click', this.closeModal);
+  this.nextBtn.removeEventListener('click', this.nextImage);
+  this.prevBtn.removeEventListener('click', this.prevImage);
+};
+
+Gallery.prototype.nextImage = function () {
+  const selected = this.modalImages.querySelector('.selected');
+  const next =
+    selected.nextElementSibling || this.modalImages.firstElementChild;
+  selected.classList.remove('selected');
+  next.classList.add('selected');
+  this.setMainImage(next);
+};
+Gallery.prototype.prevImage = function () {
+  const selected = this.modalImages.querySelector('.selected');
+  const previous =
+    selected.previousElementSibling || this.modalImages.lastElementChild;
+  selected.classList.remove('selected');
+  previous.classList.add('selected');
+  this.setMainImage(previous);
 };
 
 const nature = new Gallery(getElement('.nature'));
