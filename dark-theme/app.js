@@ -12,7 +12,7 @@ const articleData = articles
           <h2>${title}</h2>
           <div class="post-info">
             <span>${date}</span>
-            <span>${length}</span>
+            <span>${length} min read</span>
           </div>
           <p>${snippet}</p>
         </article>
