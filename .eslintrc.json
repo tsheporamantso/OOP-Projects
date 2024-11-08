@@ -15,5 +15,16 @@
     "no-param-reassign": "off",
     "eol-last": "off"
   },
-  "ignorePatterns": ["dist/", "build/"]
+  "ignorePatterns": ["dist/", "build/"],
+  "no-restricted-imports": ["error", "import1", "import2"],
+  "comma-dangle": ["error", "never"],
+  "object-curly-newline": [
+    "error",
+    {
+      "ObjectExpression": "always",
+      "ObjectPattern": { "multiline": true },
+      "ImportDeclaration": "never",
+      "ExportDeclaration": { "multiline": true, "minProperties": 3 }
+    }
+  ]
 }
