@@ -5,6 +5,7 @@
 import articles from './utils/data.js';
 
 const articlesContainer = document.querySelector('.articles');
+const toggleBtn = document.querySelector('.btn');
 
 const articleData = articles
 
@@ -23,3 +24,9 @@ const articleData = articles
   })
   .join('');
 articlesContainer.innerHTML = articleData;
+
+const toggleEvent = () => {
+  document.documentElement.classList.toggle('dark-theme');
+};
+
+toggleBtn.addEventListener('click', toggleEvent);
