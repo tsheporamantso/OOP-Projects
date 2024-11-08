@@ -55,8 +55,7 @@ Navbar
   letter-spacing: 2px;
 }
 .btn {
-  background: var(--clr-primary);
-  color: var(--clr-bcg);
+  font-size: 1.5rem;
   padding: 0.25rem 0.5rem;
   border-radius: 5px;
   border-color: transparent;
