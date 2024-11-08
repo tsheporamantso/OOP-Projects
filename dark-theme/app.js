@@ -1,7 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable object-curly-newline */
-/* eslint-disable comma-dangle */
-/* eslint-disable import/extensions */
 import articles from './utils/data.js';
 
 const articlesContainer = document.querySelector('.articles');
