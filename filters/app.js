@@ -8,6 +8,7 @@ let filteredProducts = [...products];
 const productsContainer = getElement('.product-container');
 const form = getElement('.input-form');
 const searchInput = getElement('.search-input');
+const companiesDOM = getElement('.companies');
 
 // display all products
 const displayProducts = () => {
@@ -39,7 +40,6 @@ const displayProducts = () => {
 displayProducts();
 
 // filter search
-
 form.addEventListener('keyup', () => {
   const inputValue = searchInput.value;
   filteredProducts = products.filter(({ title }) => {
@@ -47,3 +47,26 @@ form.addEventListener('keyup', () => {
   });
   displayProducts();
 });
+
+// filter buttons
+const displayButtons = () => {
+  const buttons = [
+    'all',
+    ...new Set(
+      products.map(({ company }) => {
+        return company;
+      })
+    ),
+  ];
+  companiesDOM.innerHTML = buttons
+    .map((company) => {
+      return `
+    <button class="company-btn" data-id="${company}">${company}</button>
+    `;
+    })
+    .join('');
+};
+
+displayButtons();
+
+// filter buttons event listener
