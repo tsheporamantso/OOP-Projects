@@ -9,6 +9,7 @@
   --primary-200: hsl(21, 80%, 74%);
   --primary-300: hsl(21, 65%, 59%);
   --primary-400: hsl(21, 57%, 50%);
+
   /* primary/main color */
   --primary-500: hsl(21, 62%, 45%);
   --primary-600: hsl(21, 77%, 34%);
@@ -27,6 +28,7 @@
   --grey-700: #334155;
   --grey-800: #1e293b;
   --grey-900: #0f172a;
+
   /* rest of the colors */
   --black: #222;
   --white: #fff;
@@ -34,8 +36,8 @@
   --red-dark: #842029;
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
-
   --smallText: 0.7em;
+
   /* rest of the vars */
   --backgroundColor: var(--grey-50);
   --textColor: var(--grey-900);
@@ -45,20 +47,33 @@
   --max-width: 1120px;
   --fixed-width: 600px;
   --fluid-width: 90vw;
-  /* box shadow*/
+
+  /* box shadow */
   --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  --shadow-2:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  --shadow-3:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  --shadow-4:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 body {
   background: var(--backgroundColor);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
   font-weight: 400;
   line-height: 1.75;
   color: var(--textColor);
@@ -112,6 +127,7 @@ small,
 a {
   text-decoration: none;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -122,9 +138,10 @@ ul {
   display: block;
   object-fit: cover;
 }
+
 /*
-=============== 
-Products 
+===============
+Products
 ===============
 */
 .products {
@@ -162,26 +179,32 @@ Products
   transition: var(--transition);
   font-size: 0.85rem;
 }
+
 .company-btn:hover {
   color: var(--grey-700);
 }
+
 .product {
   margin-bottom: 1rem;
 }
+
 .product-img {
   border-radius: var(--borderRadius);
   height: 15rem;
 }
+
 .product footer {
   padding: 0.75rem 0;
   text-align: center;
 }
+
 .product-name {
   margin-bottom: 0.25rem;
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
   color: var(--grey-500);
 }
+
 .product-price {
   margin-bottom: 0;
   color: var(--grey-700);
@@ -195,25 +218,31 @@ Products
     grid-template-columns: 200px 1fr;
   }
 }
+
 @media screen and (min-width: 992px) {
   .products-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+
   .products-container .product-img {
     height: 10rem;
   }
+
   .products-container .product-name {
     font-size: 0.85rem;
   }
+
   .products-container .product-price {
     font-size: 0.85rem;
   }
+
   .product {
     margin-bottom: 0;
   }
 }
+
 @media screen and (min-width: 1170px) {
   .products-container {
     grid-template-columns: repeat(3, 1fr);
